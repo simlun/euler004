@@ -1,7 +1,7 @@
 (ns euler004.core-test
-  (:use clojure.test
+  (:use midje.sweet
         euler004.core))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(fact
+  (+ 1 1) => 2)
+
