@@ -5,7 +5,7 @@
 (fact
   (+ 1 1) => 2)
 
-(fact
+(facts
   (products-up-to 2) => [1 2 4]
   (products-up-to 3) => [1 2 3 4 6 9])
 
@@ -22,7 +22,12 @@
   (cartesian-product [1 2 3] [4 5] => (throws Exception))
   )
 
-(fact
+(facts
   (unique-seq [1 2 3]) => [1 2 3]
   (unique-seq [1 2 2 3]) => [1 2 3])
+
+(facts
+  (unique-vec [1 2 3]) => vector?
+  (unique-vec '(1 2 3)) => vector?)
+
 
