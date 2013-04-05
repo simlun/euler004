@@ -24,3 +24,19 @@
         pairs (cartesian-product integers-up-to-n integers-up-to-n)]
     (unique-seq (multiply-pairs pairs))))
 
+(defn integer-to-list
+  [integer]
+  (loop [integer-to-explode integer
+         digits ()]
+    (let [next-integer-to-explode (unchecked-divide-int integer-to-explode 10)
+          next-digits (conj digits (unchecked-remainder-int integer-to-explode 10))]
+      (if (= next-integer-to-explode 0)
+        next-digits
+        (recur next-integer-to-explode next-digits)))))
+
+(defn palindrome?
+  [n]
+  (let [n-list (integer-to-list n)
+        n-vector (vec n-list)]
+    (= n-vector (reverse n-vector))))
+

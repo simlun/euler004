@@ -30,4 +30,16 @@
   (unique-vec [1 2 3]) => vector?
   (unique-vec '(1 2 3)) => vector?)
 
+(facts
+  (integer-to-list 123456) => '(1 2 3 4 5 6)
+  (integer-to-list 145) => '(1 4 5)
+  (integer-to-list 540) => '(5 4 0)
+  (integer-to-list 7) => '(7))
+
+(facts
+  (palindrome? 11) => true
+  (palindrome? 111) => true
+  (palindrome? 9910199) => true
+  (palindrome? 10) => false
+  (palindrome? 100) => false)
 
