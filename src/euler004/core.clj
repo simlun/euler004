@@ -1,4 +1,5 @@
-(ns euler004.core)
+(ns euler004.core
+  (:gen-class))
 
 (defn cartesian-product
   [a b]
@@ -39,4 +40,12 @@
   (let [n-list (integer-to-list n)
         n-vector (vec n-list)]
     (= n-vector (reverse n-vector))))
+
+(defn solve
+  []
+  (apply max (filter palindrome? (products-up-to 999))))
+
+(defn -main
+  [& args]
+  (println (solve)))
 
