@@ -18,17 +18,9 @@
 (fact
   (cartesian-product [1 2] [3 4]) => [[1 3] [1 4] [2 3] [2 4]])
 
-(future-fact "Input must be of same sizes"
-  (cartesian-product [1 2 3] [4 5] => (throws Exception))
-  )
-
 (facts
   (unique-seq [1 2 3]) => [1 2 3]
   (unique-seq [1 2 2 3]) => [1 2 3])
-
-(facts
-  (unique-vec [1 2 3]) => vector?
-  (unique-vec '(1 2 3)) => vector?)
 
 (facts
   (integer-to-list 123456) => '(1 2 3 4 5 6)

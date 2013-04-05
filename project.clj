@@ -3,3 +3,4 @@
   :profiles {:dev {:dependencies [[midje "1.5.0"]]
                    :plugins [[lein-midje "3.0.0"]]}}
   :main euler004.core)
+

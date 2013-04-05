@@ -11,10 +11,6 @@
   [coll]
   (seq (set coll)))
 
-(defn unique-vec
-  [coll]
-  (vec (set coll)))
-
 (defn multiply-pairs
   [coll-of-pairs]
   (map #(* (first %) (second %)) coll-of-pairs))
