@@ -1,4 +1,5 @@
 (ns euler004.core
+  (:use [euler074.core :only [integer-to-list]])
   (:gen-class))
 
 (defn cartesian-product
@@ -15,21 +16,11 @@
   [coll-of-pairs]
   (map #(* (first %) (second %)) coll-of-pairs))
 
-(defn products-up-to
+(defn integer-products-up-to
   [n]
   (let [integers-up-to-n (range 1 (inc n))
         pairs (cartesian-product integers-up-to-n integers-up-to-n)]
     (unique-seq (multiply-pairs pairs))))
-
-(defn integer-to-list
-  [integer]
-  (loop [integer-to-explode integer
-         digits ()]
-    (let [next-integer-to-explode (unchecked-divide-int integer-to-explode 10)
-          next-digits (conj digits (unchecked-remainder-int integer-to-explode 10))]
-      (if (= next-integer-to-explode 0)
-        next-digits
-        (recur next-integer-to-explode next-digits)))))
 
 (defn palindrome?
   [n]
@@ -39,7 +30,7 @@
 
 (defn solve
   []
-  (apply max (filter palindrome? (products-up-to 999))))
+  (apply max (filter palindrome? (integer-products-up-to 999))))
 
 (defn -main
   [& args]
