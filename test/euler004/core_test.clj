@@ -19,10 +19,6 @@
   (cartesian-product [1 2] [3 4]) => [[1 3] [1 4] [2 3] [2 4]])
 
 (facts
-  (unique-seq [1 2 3]) => [1 2 3]
-  (unique-seq [1 2 2 3]) => [1 2 3])
-
-(facts
   (palindrome? 11) => true
   (palindrome? 111) => true
   (palindrome? 9910199) => true

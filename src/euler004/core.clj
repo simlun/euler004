@@ -8,10 +8,6 @@
         y (seq b)]
     [x y]))
 
-(defn unique-seq
-  [coll]
-  (seq (set coll)))
-
 (defn multiply-pairs
   [coll-of-pairs]
   (map #(* (first %) (second %)) coll-of-pairs))
@@ -20,7 +16,7 @@
   [n]
   (let [integers-up-to-n (range 1 (inc n))
         pairs (cartesian-product integers-up-to-n integers-up-to-n)]
-    (unique-seq (multiply-pairs pairs))))
+    (distinct (multiply-pairs pairs))))
 
 (defn palindrome?
   [n]
